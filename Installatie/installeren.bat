@@ -9,10 +9,13 @@ if %errorlevel% neq 0 (
 
 
 REM VSCode aan het installeren
-START /WAIT VSCodeUserSetup-x64-1.90.2.exe
+START /WAIT VSCodeUserSetup-x64-1.90.2.exe /MERGETASKS=!runcode
 if %errorlevel% neq 0 (
     echo Kan VSCode niet installeren
     pause
 )
+
+REM VSCode afsluiten als het automatisch start
+taskkill /IM Code.exe /F >nul 2>&1
 
 start modules.bat
