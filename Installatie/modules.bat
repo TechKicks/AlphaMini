@@ -1,5 +1,5 @@
 REM Python requirements aan het installeren
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
 if %errorlevel% neq 0 (
     echo Kan python requirements niet installeren
     pause
